@@ -1,88 +1,182 @@
-/* Add or modify styles as needed */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0078d7;
-  }
-  
-  .taskbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: #f0f0f0;
+    background: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header (Hero Section) */
+#hero {
+    position: relative;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 20px;
-  }
-  
-  .start-menu {
-    position: relative;
-  }
-  
-  .start-menu-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  .start-menu-content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .start-menu-content ul li {
-    padding: 5px 0;
-    cursor: pointer;
-  }
-  
-  .desktop {
-    margin-top: 40px;
-    padding: 20px;
-  }
-  
-  .icon {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    margin-right: 20px;
+    justify-content: center;
     text-align: center;
-    line-height: 80px;
-    cursor: pointer;
-  }
-  
-  .notification-area {
-    margin-left: auto;
-    margin-right: 20px;
-  }
-  
-  .system-tray {
-    margin-right: 20px;
-  }
-  
-  .system-tray-icon {
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .search-bar {
-    margin-right: 20px;
-  }
-  
-  .search-bar input {
-    padding: 5px;
+    overflow: hidden;
+}
+
+#hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(50%);
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #6b1919, #bd5500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-overlay button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    background: #ff0000;
+    color: #fff;
     border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.hero-overlay button:hover {
+    background: #ff7300;
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff7300;
+}
+
+/* Sections */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ff0000;
+}
+
+/* Countdown */
+#countdown-timer {
+    font-size: 2rem;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px #ff0000;
+}
+
+/* Testimonials */
+.testimonial {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 500px;
+    border-left: 5px solid #ff0000;
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: #ff0000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: #ff7300;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 20px #ff7300;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0000;
+    }
+}
+
+h2 {
+    animation: glow 1.5s infinite alternate;
+}
